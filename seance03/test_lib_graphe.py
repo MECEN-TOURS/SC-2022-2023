@@ -21,6 +21,7 @@ def test_recupere_voisins():
 
 
 def test_sont_connectes():
+    sommets = [1, 2, 3, 4, 5, 6, 7, 8]
     arretes = [(1, 2), (2, 3), (2, 5), (3, 4), (4, 5), (5, 6), (6, 7), (8, 6)]
     assert sont_connectes(depart=1, arrivee=7, arretes=arretes)
     assert not sont_connectes(depart=1, arrivee=8, arretes=arretes)

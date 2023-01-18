@@ -1,10 +1,6 @@
 """Description.
 
 Module permettant de modéliser le problème du berger, loup, mouton, chou en python.
-
-TODO: 
-- Ajouter une fonction pretty_print pour avoir un affichage plus lisible des etats et sommets.
-- Compléter la documentation des fonctions publique avec des exemples
 """
 from enum import Enum
 from dataclasses import dataclass
@@ -108,3 +104,18 @@ ARRETES = [
     for sommet2 in SOMMETS
     if _sont_relies(sommet1, sommet2)
 ]
+
+
+def pretty_print(etat: Etat):
+    """Affiche de manière plus lisible un état."""
+    return (
+        f'{"B" if etat.berger == Rive.GAUCHE else "X"} '
+        f'{"L" if etat.loup == Rive.GAUCHE else "X"} '
+        f'{"M" if etat.mouton == Rive.GAUCHE else "X"} '
+        f'{"C" if etat.chou == Rive.GAUCHE else "X"}\n'
+        "-------\n"
+        f'{"B" if etat.berger == Rive.DROITE else "X"} '
+        f'{"L" if etat.loup == Rive.DROITE else "X"} '
+        f'{"M" if etat.mouton == Rive.DROITE else "X"} '
+        f'{"C" if etat.chou == Rive.DROITE else "X"}'
+    )

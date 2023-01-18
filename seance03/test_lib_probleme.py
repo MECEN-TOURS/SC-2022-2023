@@ -11,6 +11,7 @@ from lib_probleme import (
     _sont_relies,
     Rive,
     Etat,
+    pretty_print,
 )
 
 
@@ -61,3 +62,31 @@ def test_sont_relies():
 def test_constantes():
     assert len(SOMMETS) == 10
     assert len(ARRETES) == 20
+
+
+def test_pretty():
+    assert (
+        pretty_print(DEPART)
+        == """B L M C
+-------
+X X X X"""
+    )
+    assert (
+        pretty_print(ARRIVEE)
+        == """X X X X
+-------
+B L M C"""
+    )
+    assert (
+        pretty_print(
+            Etat(
+                berger=Rive.GAUCHE,
+                loup=Rive.DROITE,
+                mouton=Rive.GAUCHE,
+                chou=Rive.DROITE,
+            )
+        )
+        == """B X M X
+-------
+X L X C"""
+    )
