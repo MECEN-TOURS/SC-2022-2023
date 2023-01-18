@@ -2,7 +2,7 @@
 
 Implémentation des algorithmes de parcours de graphes génériques.
 
-TODO: 
+TODO:
 - Reprendre la fonction cherche_chemin qui sont trop longues.
 On pourrait "factoriser" la partie construction de vu_en_premier_par dans une autre fonction
 - Compléter la documentation des fonctions publique avec des exemples
@@ -28,7 +28,6 @@ def sont_connectes(
     depart: Sommet,
     arrivee: Sommet,
     arretes: list[tuple[Sommet, Sommet]],
-    debug: bool = False,
 ) -> bool:
     """Détermine s'il y a un chemin reliant depart et arrivee via des arretes.
 
@@ -42,10 +41,6 @@ def sont_connectes(
     a_visiter = [depart]
     visites: list[Sommet] = []
     while a_visiter:
-        if debug:
-            print(f"{a_visiter=}")
-            print(f"{visites=}")
-            print()
         sommet_courant = a_visiter.pop()
         visites.append(sommet_courant)
         for voisin in _recupere_voisins(sommet=sommet_courant, arretes=arretes):
@@ -81,7 +76,6 @@ def cherche_chemin(
     depart: Sommet,
     arrivee: Sommet,
     arretes: list[tuple[Sommet, Sommet]],
-    debug: bool = False,
 ) -> list[Sommet]:
     """Renvoie un chemin reliant depart et arrivee via les arretes.
 
@@ -102,10 +96,6 @@ def cherche_chemin(
     vu_en_premier_par: dict[Sommet, Sommet | None] = dict()
     vu_en_premier_par[depart] = None
     while a_visiter:
-        if debug:
-            print(f"{a_visiter=}")
-            print(f"{visites=}")
-            print()
         sommet_courant = a_visiter.pop()
         visites.append(sommet_courant)
         for voisin in _recupere_voisins(sommet=sommet_courant, arretes=arretes):
