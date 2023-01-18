@@ -49,7 +49,7 @@ def sont_connectes(
 def _determine_chemin(
     arrivee: Sommet, vu_en_premier_par: dict[Sommet, Sommet | None]
 ) -> list[Sommet]:
-    """Détermine le chemin de départ à arrivée en remontant la relation vu_en_premier_par.
+    """Renvoie un chemin de départ à arrivée en remontant la relation vu_en_premier_par.
 
     vu_en_premier_par associe None au somme de depart.
     """
@@ -83,7 +83,6 @@ def cherche_chemin(
     >>> cherche_chemin(depart=1, arrivee=8, arretes=arretes)
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
-      File "C:\\Users\\perrollaz\\Documents\\sc03\\lib_graphe.py", line 99, in cherche_chemin vu_en_premier_par[voisin] = sommet_courant
     __main__.PasDeChemin
     """
     a_visiter = [depart]
