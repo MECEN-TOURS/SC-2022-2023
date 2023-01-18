@@ -1,10 +1,6 @@
 """Description.
 
 Implémentation des algorithmes de parcours de graphes génériques.
-
-TODO:
-- Reprendre la fonction cherche_chemin qui sont trop longues.
-On pourrait "factoriser" la partie construction de vu_en_premier_par dans une autre fonction
 """
 
 from typing import TypeVar
