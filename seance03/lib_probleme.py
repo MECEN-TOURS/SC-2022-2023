@@ -20,7 +20,23 @@ class Rive(Enum):
 # frozen pour pouvoir utiliser un Etat comme clef de dictionnaire
 @dataclass(frozen=True)
 class Etat:
-    """Représente la disposition des personnages de chaque côté de la rivière."""
+    """Représente la disposition des personnages de chaque côté de la rivière.
+
+    Exemple:
+    >>> Etat(
+    ...     berger=Rive.GAUCHE,
+    ...     loup=Rive.GAUCHE,
+    ...     mouton=Rive.GAUCHE,
+    ...     chou=Rive.GAUCHE,
+    ... )
+    Etat(berger=<Rive.GAUCHE: 'gauche'>, loup=<Rive.GAUCHE: 'gauche'>, mouton=<Rive.GAUCHE: 'gauche'>, chou=<Rive.GAUCHE: 'gauche'>)
+    >>> Etat(
+    ...     berger=Rive.DROITE,
+    ...     loup=Rive.DROITE,
+    ...     mouton=Rive.DROITE,
+    ...     chou=Rive.DROITE,
+    ... )
+    Etat(berger=<Rive.DROITE: 'droite'>, loup=<Rive.DROITE: 'droite'>, mouton=<Rive.DROITE: 'droite'>, chou=<Rive.DROITE: 'droite'>)"""
 
     berger: Rive
     loup: Rive

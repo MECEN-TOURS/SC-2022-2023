@@ -30,7 +30,15 @@ def sont_connectes(
     arretes: list[tuple[Sommet, Sommet]],
     debug: bool = False,
 ) -> bool:
-    """Détermine s'il y a un chemin reliant depart et arrivee via des arretes."""
+    """Détermine s'il y a un chemin reliant depart et arrivee via des arretes.
+
+    Exemples:
+    >>> arretes = [(1, 2), (2, 3), (2, 5), (3, 4), (4, 5), (5, 6), (6, 7), (8, 6)]
+    >>> sont_connectes(depart=1, arrivee=7, arretes=arretes)
+    True
+    >>> sont_connectes(depart=1, arrivee=8, arretes=arretes)
+    False
+    """
     a_visiter = [depart]
     visites: list[Sommet] = []
     while a_visiter:
