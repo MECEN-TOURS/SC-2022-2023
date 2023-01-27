@@ -11,3 +11,8 @@ Cours de supply pour le Master MECEN année scolaire 2022-2023
 ## Introduction au langage python
 
 [ici](https://www.idpoisson.fr/perrollaz/cours_python/PLAN.html)
+
+## Ressources additionnelles
+
+- [calmcode](https://calmcode.io/): site présentant de nombreux outils/techniques
+  en lien avec python.
