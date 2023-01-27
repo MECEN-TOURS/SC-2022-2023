@@ -1,6 +1,6 @@
 # Contenu de la séance
 
-- Desctructuration
+- Destructuration
 - `__str__` méthode
 - constructeur alternatif
 - TDD
