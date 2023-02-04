@@ -7,12 +7,13 @@ Cours de supply pour le Master MECEN année scolaire 2022-2023
 - Dernier cours le 6 Mars
 - Projet par groupe de 2 jusqu'à début avril
 - Présentation oral puis rendu du code
+- Présentation d'un projet type lors de la dernière séance
 
 ## Introduction au langage python
 
-[ici](https://www.idpoisson.fr/perrollaz/cours_python/PLAN.html)
+[Ici](https://www.idpoisson.fr/perrollaz/cours_python/PLAN.html)
 
 ## Ressources additionnelles
 
 - [calmcode](https://calmcode.io/): site présentant de nombreux outils/techniques
-  en lien avec python.
+  en lien avec python par des vidéos.
