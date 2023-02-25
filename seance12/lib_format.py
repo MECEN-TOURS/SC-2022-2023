@@ -6,6 +6,8 @@ from rich.table import Table
 from rich.columns import Columns
 import lib_sncf as ls
 
+
+# TODO: Enlever la dépendance globale en ls.CARTE_FRANCE
 def format_itineraire(itineraire: ls.Itineraire) -> Table:
     resultat = Table(title="Trajet")
     resultat.add_column("Gare")
@@ -26,6 +28,7 @@ def format_itineraire(itineraire: ls.Itineraire) -> Table:
         g1 = g2
     return resultat
 
+
 def format_connexions(carte: ls.Carte) -> Table:
     resultat = Table(title="Connexions existantes")
     resultat.add_column("Depart")
@@ -36,5 +39,6 @@ def format_connexions(carte: ls.Carte) -> Table:
         resultat.add_row(g2.nom, g1.nom, str(duree))
     return resultat
 
-def format_gares(carte) -> Columns:
+
+def format_gares(carte: ls.Carte) -> Columns:
     return Columns([gare.nom for gare in carte.gares])
