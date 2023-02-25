@@ -11,6 +11,7 @@ from lib_sncf import (
     determine_trajet,
     _convertit_en_nx,
     PasDeChemin,
+    GareInconnue,
 )
 
 
@@ -31,18 +32,18 @@ def test_gare():
 
 
 def test_conversion():
-    p, l, t = Gare("Paris"), Gare("Lyon"), Gare("Tours")
+    pa, ly, to = Gare("Paris"), Gare("Lyon"), Gare("Tours")
     carte = Carte(
-        gares=[p, l, t],
-        connexions=[(p, t, 1.0), (p, l, 2.0)],
+        gares=[pa, ly, to],
+        connexions=[(pa, to, 1.0), (pa, ly, 2.0)],
     )
     calcule = _convertit_en_nx(carte)
     attendu = nx.Graph()
-    attendu.add_nodes_from([p, l, t])
+    attendu.add_nodes_from([pa, ly, to])
     attendu.add_edges_from(
         [
-            (p, t, {"duree": 1.0}),
-            (p, l, {"duree": 2.0}),
+            (pa, to, {"duree": 1.0}),
+            (pa, ly, {"duree": 2.0}),
         ]
     )
     assert nx.utils.graphs_equal(calcule, attendu)
@@ -82,6 +83,18 @@ def test_pas_de_trajet():
         determine_trajet(
             depart=Gare("Paris"), arrivee=Gare("Nice"), carte=carte_elementaire
         )
-        
+
+
 def test_mauvaise_gare():
-    raise NotImplementedErrors
+    carte_elementaire = Carte(
+        gares=[Gare("Paris"), Gare("Tours"), Gare("Nice")],
+        connexions=[(Gare("Paris"), Gare("Tours"), 1.0)],
+    )
+    with pytest.raises(GareInconnue):
+        determine_trajet(
+            depart=Gare("Paris"), arrivee=Gare("Lyon"), carte=carte_elementaire
+        )
+    with pytest.raises(GareInconnue):
+        determine_trajet(
+            depart=Gare("Lyon"), arrivee=Gare("Paris"), carte=carte_elementaire
+        )
