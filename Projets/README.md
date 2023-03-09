@@ -2,7 +2,15 @@
 
 ## Groupes
 
-TBA
+1. Guillaume Devant, Hassan Tilki
+2. Aybuké Bicat, Corentin Ducloux
+3. Albéric D’herbais, Jean-Hugues Blanchard
+4. Simon Blanchard, Adam Belamiri
+5. Sebastien Tolojanahary, Stephen Guitter
+6. Karl Sondeji, Pierre Jean
+7. Nazifou Afolabi, Charbel Ahouandokoun
+8. Cyprien De Clercq, Basma Ghaffour
+9. Youssef Dir
 
 ## Affectation
 
